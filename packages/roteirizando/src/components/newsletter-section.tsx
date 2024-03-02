@@ -1,6 +1,29 @@
+"use client";
+
+import { subscribeToNewsletter } from "@/actions/subscribe-to-newsletter";
 import { Button } from "./button";
+import { useFormState } from "react-dom";
+import { useEffect } from "react";
+import { toast } from "sonner";
 
 export const NewsletterSection = () => {
+  const [formState, formAction] = useFormState(subscribeToNewsletter, {
+    error: "",
+    success: "",
+  });
+
+  useEffect(() => {
+    if (formState.error) {
+      (document.getElementById("email") as HTMLInputElement).focus();
+      toast.error(formState.error);
+    }
+
+    if (formState.success) {
+      (document.getElementById("email") as HTMLInputElement).value = "";
+      toast.success(formState.success);
+    }
+  }, [formState]);
+
   return (
     <div className="px-6 md:px-20 mt-14 md:mt-24" id="newsletter">
       <div className="bg-blue-700 rounded-2xl flex flex-col items-center justify-start px-6 py-10 md:px-14 md:py-16 gap-10 md:gap-14">
@@ -8,8 +31,10 @@ export const NewsletterSection = () => {
           Se inscreva na newsletter do roteirizando para receber dicas de viagem{" "}
           <span className="underline text-yellow-300">semanalmente</span>
         </h1>
-
-        <form className="flex flex-col gap-4 w-full items-center">
+        <form
+          className="flex flex-col gap-4 w-full items-center"
+          action={formAction}
+        >
           <div className="flex flex-col gap-2 w-full md:w-[412px] items-start">
             <label
               htmlFor="email"
