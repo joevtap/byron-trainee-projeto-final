@@ -11,16 +11,5 @@
     "packages/email",
     "packages/roteirizando",
     "packages/strapi"
-  ],
-  "scripts": {
-    "build:roteirizando": "npm run build -w roteirizando",
-    "build:strapi": "npm run build -w strapi",
-    "dev:roteirizando": "npm run dev -w roteirizando",
-    "dev:roteirizando-emails": "npm run dev -w roteirizando-emails",
-    "dev:strapi": "npm run develop -w strapi",
-    "lint:roteirizando": "npm run lint -w roteirizando",
-    "start:roteirizando": "npm run start -w roteirizando",
-    "start:strapi": "npm run start -w strapi",
-    "strapi": "npm run strapi -w strapi"
-  }
+  ]
 }
