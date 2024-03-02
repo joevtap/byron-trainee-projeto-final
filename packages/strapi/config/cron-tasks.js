@@ -14,7 +14,7 @@ module.exports = {
       const newsletter = await strapi.entityService.findMany(
         "api::newsletter.newsletter",
         {
-          sort: { createdAt: "ASC" },
+          sort: { createdAt: "asc" },
           filters: { sent: false },
           populate: {
             image: true,
@@ -279,7 +279,7 @@ module.exports = {
               content: md.render(newsletter[0].content),
               unsubscribeUrl:
                 process.env.FRONTEND_URI +
-                `/newsletter/unsubscribe?email=${subscriber.email}&identifier=${subscriber.identifier}`,
+                `/newsletter/unsubscribe/${subscriber.identifier}?email=${subscriber.email}`,
             },
           }
         );
@@ -299,7 +299,7 @@ module.exports = {
       strapi.log.info(`Newsletter of id ${newsletter[0].id} sent at ${sentAt}`);
     },
     options: {
-      rule: "0 0 8 * * *",
+      rule: process.env.NEWSLETTER_CRONTAB || "0 0 8 * * *",
     },
   },
 };

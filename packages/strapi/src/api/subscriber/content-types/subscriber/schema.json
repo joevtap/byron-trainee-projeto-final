@@ -14,11 +14,13 @@
   "attributes": {
     "email": {
       "type": "email",
-      "unique": true
+      "unique": true,
+      "required": true
     },
     "identifier": {
       "type": "string",
-      "unique": true
+      "unique": true,
+      "required": true
     }
   }
 }

@@ -864,8 +864,8 @@ export interface ApiSubscriberSubscriber extends Schema.CollectionType {
     draftAndPublish: false;
   };
   attributes: {
-    email: Attribute.Email & Attribute.Unique;
-    identifier: Attribute.String & Attribute.Unique;
+    email: Attribute.Email & Attribute.Required & Attribute.Unique;
+    identifier: Attribute.String & Attribute.Required & Attribute.Unique;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
