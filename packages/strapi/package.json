@@ -10,7 +10,7 @@
   "scripts": {
     "build": "strapi build",
     "develop": "strapi develop",
-    "start": "npm install && npm run start",
+    "start": "npm install && npm run strapi start",
     "strapi": "strapi"
   },
   "dependencies": {
