@@ -7,6 +7,8 @@ import { useEffect } from "react";
 import { useFormState } from "react-dom";
 import { toast } from "sonner";
 
+export const runtime = "edge";
+
 export default function Unsubscribe({
   params,
 }: {

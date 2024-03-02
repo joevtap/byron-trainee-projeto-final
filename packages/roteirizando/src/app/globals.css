@@ -9,3 +9,42 @@ body {
 html {
   @apply scroll-smooth;
 }
+
+#markdown-content h1,
+#markdown-content h2,
+#markdown-content h3,
+#markdown-content p {
+  @apply my-4;
+}
+
+#markdown-content h1 {
+  @apply scroll-m-20 text-xl font-bold tracking-tight lg:text-2xl;
+}
+
+#markdown-content h2 {
+  @apply scroll-m-20 border-b pb-2 text-lg font-semibold tracking-tight first:mt-0;
+}
+
+#markdown-content h3 {
+  @apply scroll-m-20 text-base font-semibold tracking-tight;
+}
+
+#markdown-content p {
+  @apply scroll-m-20 text-base tracking-tight;
+}
+
+#markdown-content a {
+  @apply scroll-m-20 text-blue-500 underline;
+}
+
+#markdown-content ul {
+  @apply scroll-m-20 list-disc [&>li]:mt-2 ml-8;
+}
+
+#markdown-content ol {
+  @apply scroll-m-20 list-decimal [&>li]:mt-2;
+}
+
+#markdown-content blockquote {
+  @apply scroll-m-20 border-l-4 pl-4 italic;
+}
