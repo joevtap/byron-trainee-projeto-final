@@ -1,5 +1,5 @@
 interface ButtonProps {
-  variant: "CTA" | "primary" | "secondary";
+  variant: "CTA" | "primary" | "secondary" | "destroy";
   type: "button" | "anchor";
   children: React.ReactNode;
   submit?: boolean;
@@ -18,6 +18,8 @@ export const Button = (props: ButtonProps) => {
           ? "bg-neutral-50 h-12 border-[1px] border-neutral-300 rounded-lg text-neutral-700 px-8 py-2 font-sans font-medium text-sm"
           : props.variant === "primary"
           ? "bg-yellow-300 h-12 rounded-lg text-neutral-800 font-medium text-sm px-8 py-2 font-sans"
+          : props.variant === "destroy"
+          ? "bg-red-600 h-12 rounded-lg text-neutral-50 font-medium text-sm px-8 py-2 font-sans"
           : null
       } ${props.className} hover:brightness-90 transition-all duration-200`}
     >
